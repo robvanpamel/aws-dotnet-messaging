@@ -872,7 +872,7 @@ public class MessagePublisherTests
             telemetryFactory.Object
         );
 
-        await Assert.ThrowsAsync<FailedToPublishException>(() => messagePublisher.PublishAsync(_chatMessage));
+        await Assert.ThrowsAsync<Exception>(() => messagePublisher.PublishAsync(_chatMessage));
 
         telemetryTrace.Verify(x =>
                 x.AddException(
